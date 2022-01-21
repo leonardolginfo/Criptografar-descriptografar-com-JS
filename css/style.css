@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #F3F5FC;
+}
+
+#header {
+  height: 60px;
+  background-color: blue;
+
+}
+#aviso{
+  text-align: center;
+}
+#saida-aviso{
+  text-align: center;
+}
+
+#title {
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+}
+
+.formulario_entrada {
+  padding: 10px;
+  background-color: #F3F5FC;
+}
+
+#texto-entrada {
+  border-radius: 0.5em;  
+  display: block;
+
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 0.5em;
+  width: 50%;
+  height: 50px;
+}
+
+#texto-saida{
+  border-radius: 0.5em;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 0.5em;
+  width: 50%;
+  height: 50px;
+}
+

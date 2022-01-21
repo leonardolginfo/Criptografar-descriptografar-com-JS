@@ -1,27 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="js/script.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    
+
     <title>Criptografar e Descriptografar</title>
 </head>
+
 <body>
-    <h1>Criptografar e Descriptografar</h1>
+    <header class="header">
+        <div class="logo">
+
+        </div>
+
+        <h1 id="title">Criptografar e Descriptografar</h1>
+
+    </header>
+
+ 
+
+    <p id="aviso">Digite o texto no campo abaixo e escolha o que deseja fazer.</p>
     <main class="principal">
 
-        <section class="entrada">
-
-        </section>
+     
+            <section class="formulario_entrada">
+                <form action="">
+                    <input type="text" name="texto-entrada" id="texto-entrada"
+                        placeholder="Digite ou cole o texto - não use acentos e nem ç">
+                    <input type="submit" value="CRIPTOGRAFAR" class="btn" id="btnCripto">
+                    <input type="submit" value="DESCRIPTOGRAFAR" class="btn" id="btnDescripto">
+                </form>
+            </section>
+        
 
         <section class="saida">
+            <p id="saida-aviso">Mensagem cifrada!</p>
+            <form action="">
+                <input type="text" name="saida-texto" id="texto-saida">
 
+            </form>
         </section>
 
     </main>
     <script script="js/script.js"></script>
 </body>
+
 </html>
