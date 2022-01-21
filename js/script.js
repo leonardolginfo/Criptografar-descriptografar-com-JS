@@ -45,7 +45,7 @@ var texto = "sera";
 
 function descriptografar(){
 
-    
+    dhasdhahdkashdkjashdkasdka
     
 }
 criptografar(texto);
