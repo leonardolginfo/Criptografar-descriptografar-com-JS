@@ -2,56 +2,33 @@ var vogais = ["a", "e", "i", "o", "u"];
 
 var cifra = ["enter", "imes", "ai", "ober", "ufat"];
 
-var saidaCriptografada;
+var textoEntrada = "sera";
+var resultadoCripto;
+var saidaDescriptografada;
 
 function criptografar(texto) {
 
-    var entradaArray = Array.from(texto);
+    resultadoCripto = texto.replace(/a/gi, 'ai')
+        .replace(/e/gi, 'enter')
+        .replace(/i/gi, 'imes')
+        .replace(/o/gi, 'ober')
+        .replace(/u/gi, 'ufat');
 
-    for (var i = 0; i < entradaArray.length; i++) {
-        if (entradaArray[i] == vogais[0]) {
-
-            var textoNovo = texto[i].replace(texto[i], cifra[2]);
-            entradaArray[i] = textoNovo;
-
-        } else if (entradaArray[i] == vogais[1]) {
-
-            var textoNovo = texto[i].replace(texto[i], cifra[0]);
-            entradaArray[i] = textoNovo;
-
-        } else if (entradaArray[i] == vogais[2]) {
-
-            var textoNovo = texto[i].replace(texto[i], cifra[1]);
-            entradaArray[i] = textoNovo;
-
-        } else if (entradaArray[i] == vogais[3]) {
-
-            var textoNovo = texto[i].replace(texto[i], cifra[3]);
-            entradaArray[i] = textoNovo;
-
-        } else if (entradaArray[i] == vogais[4]) {
-
-            var textoNovo = texto[i].replace(texto[i], cifra[4]);
-            entradaArray[i] = textoNovo;
-        }
-
-    }
-    saidaCriptografada = entradaArray.join('');
-    console.log(saidaCriptografada);
-
+    return resultadoCripto;
 }
 
-var texto = "sera";
+function descriptografar(texto) {
 
-function descriptografar(){
-
-    dhasdhahdkashdkjashdkasdka
-    
+    saidaDescriptografada = texto.replace(/ai/gi, 'a')
+        .replace(/enter/gi, 'e')
+        .replace(/imes/gi, 'i')
+        .replace(/ober/gi, 'o')
+        .replace(/ufat/gi, 'u')
+    return saidaDescriptografada;
 }
-criptografar(texto);
 
-
-
-
-
-
+criptografar(textoEntrada);
+console.log("Texto recebido: " + textoEntrada)
+console.log("Texto criptografdo " + resultadoCripto);
+descriptografar(resultadoCripto);
+console.log("Texto descriptografado: " + saidaDescriptografada);
