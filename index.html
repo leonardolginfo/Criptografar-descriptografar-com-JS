@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="css/style.css">
 
     <title>Criptografar e Descriptografar</title>
@@ -21,32 +23,33 @@
 
     </header>
 
- 
-
     <p id="aviso">Digite o texto no campo abaixo e escolha o que deseja fazer.</p>
+
     <main class="principal">
+        <section class="formulario-entrada">
+            <label class="titulo-formulario">Digite o texto na caixa abaixo</label>
+            <form>
+                <textarea
+                    placeholder="Digite o texto aqui, mas atenção! Não use acentos nem pontos de interrrogação ou exclamação, não quer facilitar para curiosos não é!"
+                    class="texto-formulario" name="entrada-formulario" id="texto-entrada"></textarea>
+                <button id="btn-cripto" class="btn">CRIPTOGRAFAR</button>
+                <button id="btn-descripto" class="btn">DESCRIPTOGRAFAR</button>
+            </form>
+        </section>
 
-     
-            <section class="formulario_entrada">
-                <form action="">
-                    <input type="text" name="texto-entrada" id="texto-entrada"
-                        placeholder="Digite ou cole o texto - não use acentos e nem ç">
-                    <input type="submit" value="CRIPTOGRAFAR" class="btn" id="btnCripto">
-                    <input type="submit" value="DESCRIPTOGRAFAR" class="btn" id="btnDescripto">
-                </form>
-            </section>
-        
-
-        <section class="saida">
+        <section class="formulario-saida">
             <p id="saida-aviso">Mensagem cifrada!</p>
-            <form action="">
-                <input type="text" name="saida-texto" id="texto-saida">
-
+            <form>
+                <textarea id="texto-saida" class="texto-formulario"
+                    placeholder="Ops! Parece que você não digitou nada no campo anterior."></textarea>
+                <button id="btn-copiar" class="btn">COPIAR</button>
             </form>
         </section>
 
     </main>
-    <script script="js/script.js"></script>
+
+   <script src="js/script.js"></script>
+   
 </body>
 
 </html>
