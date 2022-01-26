@@ -5,11 +5,9 @@ var btnDescriptografar = document.querySelector('#btn-descripto');
 var copiarTexto = document.querySelector('#btn-copiar');
 
 
-
 btnCriptografar.addEventListener('click', (event) => {
 
     event.preventDefault();
-
     resultado.textContent = criptografar(entrada.value);
 
     entrada.value = "";
@@ -23,13 +21,24 @@ btnDescriptografar.addEventListener('click', (event) => {
     entrada.value = "";
 })
 
+copiarTexto.addEventListener('click', (event) => {
+
+    event.preventDefault();
+
+    result.select();
+
+    document.execCommand('copy');
+    frase.value = "";
+})
+
+
 function criptografar(entrada) {
 
     resultadoCripto = entrada.replace(/e/gi, "enter")
         .replace(/i/gi, "imes")
         .replace(/a/gi, "ai")
         .replace(/o/gi, "ober")
-        .replace(/u/gi, "ufat")
+        .replace(/u/gi, "ufat").toLowerCase();
 
     return resultadoCripto;
 
@@ -45,8 +54,3 @@ function descriptografar(texto) {
         .replace(/ufat/gi, 'u')
     return saidaDescriptografada;
 }
-
-
-
-
-    
