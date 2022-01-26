@@ -28,7 +28,7 @@ copiarTexto.addEventListener('click', (event) => {
     result.select();
 
     document.execCommand('copy');
-    frase.value = "";
+    entrada.value = "";
 })
 
 
@@ -44,12 +44,11 @@ function criptografar(entrada) {
 
 }
 
-
 function descriptografar(texto) {
 
-    saidaDescriptografada = texto.replace(/ai/gi, 'a')
-        .replace(/enter/gi, 'e')
+    saidaDescriptografada = texto.replace(/enter/gi, 'e')
         .replace(/imes/gi, 'i')
+        .replace(/ai/gi, 'a')
         .replace(/ober/gi, 'o')
         .replace(/ufat/gi, 'u')
     return saidaDescriptografada;

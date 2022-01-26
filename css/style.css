@@ -82,6 +82,17 @@ fieldset:nth-child(1) {
   padding: 10px;
 }
 
+.icone {
+  margin-right: 5px;
+  align-items: center;
+}
+
+#img-icone-lock {}
+
+#img-icone:hover {
+  image: url(/img/lock_white_24dp.svg)
+}
+
 .btn {
   position: relative;
 
@@ -127,4 +138,3 @@ fieldset:nth-child(1) {
   padding-top: 15px;
   padding-bottom: 15px;
 }
-
