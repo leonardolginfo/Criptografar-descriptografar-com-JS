@@ -4,11 +4,12 @@ var btnCriptografar = document.querySelector('#btn-cripto');
 var btnDescriptografar = document.querySelector('#btn-descripto');
 var copiarTexto = document.querySelector('#btn-copiar');
 
+var validaEntrada = /[(0-9.)(a0)(0a.)(À-ü)]/gim;
 
 btnCriptografar.addEventListener('click', (event) => {
 
     event.preventDefault();
-    resultado.textContent = criptografar(entrada.value);
+    resultado.textContent = validarEntrada(criptografar(entrada.value));
 
     entrada.value = "";
 
@@ -25,20 +26,19 @@ copiarTexto.addEventListener('click', (event) => {
 
     event.preventDefault();
 
-    result.select();
+    resultado.select();
 
     document.execCommand('copy');
     entrada.value = "";
 })
 
-
 function criptografar(entrada) {
 
-    resultadoCripto = entrada.replace(/e/gi, "enter")
-        .replace(/i/gi, "imes")
-        .replace(/a/gi, "ai")
-        .replace(/o/gi, "ober")
-        .replace(/u/gi, "ufat").toLowerCase();
+    resultadoCripto = entrada.replace(/e/g, "enter")
+        .replace(/i/g, "imes")
+        .replace(/a/g, "ai")
+        .replace(/o/g, "ober")
+        .replace(/u/g, "ufat").toLowerCase();
 
     return resultadoCripto;
 
@@ -46,10 +46,24 @@ function criptografar(entrada) {
 
 function descriptografar(texto) {
 
-    saidaDescriptografada = texto.replace(/enter/gi, 'e')
-        .replace(/imes/gi, 'i')
-        .replace(/ai/gi, 'a')
-        .replace(/ober/gi, 'o')
-        .replace(/ufat/gi, 'u')
+    saidaDescriptografada = texto.replace(/enter/g, 'e')
+        .replace(/imes/g, 'i')
+        .replace(/ai/g, 'a')
+        .replace(/ober/g, 'o')
+        .replace(/ufat/g, 'u')
+
     return saidaDescriptografada;
+
+}
+
+function validarEntrada(frase) {
+
+    if (validaEntrada.test(frase)) {
+        return "Números e acentos não são aceitos! Eles facilitam que seu segredo seja descoberto ;)";
+    } else {
+        console.log(frase);
+        return frase;
+
+    }
+
 }
