@@ -30,10 +30,10 @@
                 <fieldset>
                     <div class="container">
                         <textarea id="texto-entrada" placeholder="Digite aqui :)" rows="5"></textarea>
-                    </div>
-                    <div class="container">
-                        <button id="btn-cripto" type="button" class="btn orange">CRIPTOGRAFAR</button>
-                        <button id="btn-descripto" type="button" class="btn orange">DESCRIPTOGRAFAR</button>
+                        <div class="container">
+                            <button id="btn-cripto" type="button" class="btn orange">CRIPTOGRAFAR</button>
+                            <button id="btn-descripto" type="button" class="btn orange">DESCRIPTOGRAFAR</button>
+                        </div>
                     </div>
                 </fieldset>
             </form>
@@ -41,8 +41,8 @@
 
         <section class="formulario-saida">
             <form>
+                <p id="texto-saida-label">Mensagem cifrada!</p>
                 <fieldset>
-                    <label for="texto-saida" id="texto-saida-label">Mensagem cifrada!</label>
                     <div class="container">
                         <textarea id="texto-saida" class="texto-saida" name="texto-saida"
                             placeholder="Ops! Não achei seu texto."></textarea>
