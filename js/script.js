@@ -4,7 +4,8 @@ var btnCriptografar = document.querySelector('#btn-cripto');
 var btnDescriptografar = document.querySelector('#btn-descripto');
 var copiarTexto = document.querySelector('#btn-copiar');
 
-var validaEntrada = /[(0-9.)(a0)(0a.)(À-ü)]/gim;
+//var validaEntrada = /[(0-9.)(a0)(0a.)(À-ü)]/gim;
+var validaEntrada = /[(0-9)][(a0*)(0a*)(À-ü)\r\n]+/gim;
 
 btnCriptografar.addEventListener('click', (event) => {
 
