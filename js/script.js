@@ -5,8 +5,9 @@ var btnDescriptografar = document.querySelector('#btn-descripto');
 var copiarTexto = document.querySelector('#btn-copiar');
 
 //var validaEntrada = /[(0-9.)(a0)(0a.)(À-ü)]/gim;
-var validaEntrada = /[(0-9)][(a0*)(0a*)(À-ü)\r\n]+/gim;
-
+//var validaEntrada = /[(0-9)|(a0*)|(0a*)|(À-ü)\r\n]+/gim;
+var validaEntrada = /[(0-9)]/gim;
+var testeNum = "123";
 btnCriptografar.addEventListener('click', (event) => {
 
     event.preventDefault();
@@ -56,11 +57,12 @@ function descriptografar(texto) {
     return saidaDescriptografada;
 
 }
+console.log(validaEntrada.test(testeNum));
 
 function validarEntrada(frase) {
 
     if (validaEntrada.test(frase)) {
-        return "Números e acentos não são aceitos! Eles facilitam que seu segredo seja descoberto ;)";
+        return "Números não são aceitos! Eles facilitam que seu segredo seja descoberto ;)";
     } else {
         console.log(frase);
         return frase;
