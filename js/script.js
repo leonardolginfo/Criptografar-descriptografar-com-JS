@@ -1,4 +1,5 @@
 var entrada = document.querySelector("#texto-entrada");
+var entradaLimpa = entrada.normalize();
 var resultado = document.querySelector('#texto-saida');
 var btnCriptografar = document.querySelector('#btn-cripto');
 var btnDescriptografar = document.querySelector('#btn-descripto');
@@ -36,7 +37,7 @@ copiarTexto.addEventListener('click', (event) => {
 
 function criptografar(entrada) {
 
-    resultadoCripto = entrada.replace(/e/g, "enter")
+    resultadoCripto = entrada.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/e/g, "enter")
         .replace(/i/g, "imes")
         .replace(/a/g, "ai")
         .replace(/o/g, "ober")
