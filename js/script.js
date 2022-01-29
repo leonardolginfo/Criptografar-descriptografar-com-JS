@@ -1,5 +1,4 @@
 var entrada = document.querySelector("#texto-entrada");
-var entradaLimpa = entrada.normalize();
 var resultado = document.querySelector('#texto-saida');
 var btnCriptografar = document.querySelector('#btn-cripto');
 var btnDescriptografar = document.querySelector('#btn-descripto');
@@ -8,12 +7,13 @@ var copiarTexto = document.querySelector('#btn-copiar');
 //var validaEntrada = /[(0-9.)(a0)(0a.)(À-ü)]/gim;
 //var validaEntrada = /[(0-9)|(a0*)|(0a*)|(À-ü)\r\n]+/gim;
 var validaEntrada = /[(0-9)]/gim;
-var testeNum = "123";
+
+
 btnCriptografar.addEventListener('click', (event) => {
 
     event.preventDefault();
     resultado.textContent = validarEntrada(criptografar(entrada.value));
-
+    
     entrada.value = "";
 
 })
@@ -37,11 +37,11 @@ copiarTexto.addEventListener('click', (event) => {
 
 function criptografar(entrada) {
 
-    resultadoCripto = entrada.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/e/g, "enter")
-        .replace(/i/g, "imes")
-        .replace(/a/g, "ai")
-        .replace(/o/g, "ober")
-        .replace(/u/g, "ufat").toLowerCase();
+    resultadoCripto = entrada.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/[eE]/g, "enter")
+        .replace(/[iI]/g, "imes")
+        .replace(/[aA]/g, "ai")
+        .replace(/[oO]/g, "ober")
+        .replace(/[uU]/g, "ufat").toLowerCase();
 
     return resultadoCripto;
 
@@ -58,8 +58,6 @@ function descriptografar(texto) {
     return saidaDescriptografada;
 
 }
-console.log(validaEntrada.test(testeNum));
-
 function validarEntrada(frase) {
 
     if (validaEntrada.test(frase)) {
